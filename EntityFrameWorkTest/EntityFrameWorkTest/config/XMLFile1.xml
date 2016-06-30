@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SqlRoot>
+  <SqlList name="sqlServer">
+    <SqlCmd name="GetBlogById">
+      <CmdLine>
+        <![CDATA[
+		select * from blogs where blogid=@BlogId
+	]]>
+      </CmdLine>
+      <param name="@BlogId" type="Int32"/>
+    </SqlCmd>
+    <SqlCmd name="GetBlogAll">
+      <CmdLine>
+        <![CDATA[
+		select * from blogs --where blogid=@BlogId
+	]]>
+      </CmdLine>
+    </SqlCmd>
+
+    <SqlCmd name="GetBlogTitle">
+      <CmdLine>
+        <![CDATA[
+		select p.PostId, p.Title,b.Name from Posts p
+left join Blogs b on p.BlogId=b.BlogId
+
+	]]>
+      </CmdLine>
+    </SqlCmd>
+  </SqlList>
+  <SqlList name="mySql">
+    <SqlCmd name="GettbtestAll">
+      <CmdLine>
+        <![CDATA[
+		select * from tb_test
+	]]>
+      </CmdLine>
+    </SqlCmd>
+  </SqlList>
+  <SqlList name="oracle">
+  </SqlList>
+</SqlRoot>
